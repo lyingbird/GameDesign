@@ -1,0 +1,17 @@
+{
+  "name": "gamedesignflow",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Bring-your-own-API-key replica of GameDesignFlow: an AI game-design (GDD) generator with an 11-node human-in-the-loop workflow.",
+  "scripts": {
+    "dev": "concurrently -n server,web -c blue,green \"pnpm --filter @gdf/server dev\" \"pnpm --filter @gdf/web dev\"",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm --filter @gdf/server test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "typescript": "^5.6.0"
+  },
+  "packageManager": "pnpm@9.12.0"
+}

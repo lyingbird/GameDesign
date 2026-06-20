@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+build/
+.vite/
+
+# OMC / agent session state (process artifacts, may contain session data)
+.omc/
+
+# runtime task persistence
+gflow-clone/apps/server/data/
+
+# logs / temp / os
+*.log
+*.tmp
+.DS_Store
+Thumbs.db

@@ -1,11 +1,11 @@
 # GameDesignFlow
 
 > **AI 游戏设计工作室 · 以 Claude Code skill 形态本地运行**
-> 一句话游戏想法 → 完整 GDD 策划案，外加数值审计与剧情审核。把一套成熟的 11 节点设计方法论，装进你的终端。
+> 一句话游戏想法 → 完整 GDD 策划案；既有游戏的单个系统 → 可落地功能详设；外加数值审计与剧情审核。把一套成熟的设计方法论，装进你的终端。
 
 <p>
 <img alt="Built for Claude Code" src="https://img.shields.io/badge/Built%20for-Claude%20Code-6E56CF">
-<img alt="skills" src="https://img.shields.io/badge/skills-3-22C55E">
+<img alt="skills" src="https://img.shields.io/badge/skills-4-22C55E">
 <img alt="genres" src="https://img.shields.io/badge/品类卡-21-F59E0B">
 <img alt="methodology" src="https://img.shields.io/badge/节点方法论-11-3B82F6">
 <img alt="tests" src="https://img.shields.io/badge/参考实现测试-23%20passing-22C55E">
@@ -28,18 +28,21 @@ GameDesignFlow 走第三条路：
 
 ## 包含什么
 
-三个独立、自包含的 Claude Code skill（`.claude/skills/`）：
+四个独立、自包含的 Claude Code skill（`.claude/skills/`），按设计层级分工：
 
-| Skill | 干什么 | 交互 |
-|---|---|---|
-| **`gdd-architect`** | 一句话想法 → 完整 GDD 策划案（10 章） | 2 次批量审阅 → 自动装配 |
-| **`numeric-audit`** | 数值/经济文档 → 五维审计评分报告（PASS/WARN/FAIL + 风险 + 调参） | 一次性 |
-| **`narrative-review`** | 剧情/世界观文本 → 结构一致性审核报告 | 一次性 |
+| Skill | 层级 | 干什么 | 交互 |
+|---|---|---|---|
+| **`gdd-architect`** | 立项（整个游戏） | 一句话想法 → 完整 GDD 策划案（10 章） | 2 次批量审阅 → 装配 |
+| **`feature-designer`** | 功能/系统（既有游戏） | 一个系统/玩法/关卡 → 可落地详设（10 节，程序/美术/数值照着落地） | 2 次批量审阅 → 装配 |
+| **`numeric-audit`** | 专项审计 | 数值/经济文档 → 五维评分报告（PASS/WARN/FAIL + 风险 + 调参） | 一次性 |
+| **`narrative-review`** | 专项审计 | 剧情/世界观文本 → 结构一致性审核报告 | 一次性 |
+
+> **选哪个**：做**新游戏立项** → `gdd-architect`；给**已有游戏设计某个系统/功能** → `feature-designer`；**审**数值或剧情 → 对应审计 skill。
 
 底层方法论知识库（`studio/packages/shared/kb/`，被 skill 按需读取增强）：
 - **11 节点设计方法论**（创意接入 → 核心幻想 → 支柱 → 品类 → 循环 → 系统 → 数值 → 装配 → 审核 → 锁版 → 验证）
 - **21 张品类卡**（塔防/肉鸽/ARPG/魂类/银河城/平台跳跃/卡牌…，含核心循环、子系统、参考作、坑、单人可行性）
-- **11 张方法论卡** + **10 章 GDD 骨架 schema**
+- **11 张方法论卡** + **两套输出 schema**：GDD（10 章立项案）/ Feature Spec（10 节功能详设）
 
 ## 快速开始
 
@@ -56,11 +59,13 @@ cd GameDesign
 → 触发 `gdd-architect`：匹配品类卡 → 出「方向卡」请你批量审阅 → 「蓝图卡」→ 装配完整 GDD 写入文件。
 
 ```
+给已有游戏设计一个系统：给我的 ARPG 设计一套附魔系统
 数值审计：<贴上你的资源产出消耗表>
 剧情审核：<贴上你的剧情大纲>
 ```
+→ 分别触发 `feature-designer` / `numeric-audit` / `narrative-review`。
 
-**看一份真实产物** → [`.claude/skills/gdd-architect/EXAMPLE-GDD.md`](.claude/skills/gdd-architect/EXAMPLE-GDD.md)（由 skill 自测生成的《噬变防线》GDD）。
+**看真实产物**：[GDD 立项案](.claude/skills/gdd-architect/EXAMPLE-GDD.md)（《噬变防线》）· [功能详设](.claude/skills/feature-designer/EXAMPLE-SPEC.md)（该游戏的「基因协同系统」）——均由 skill 自测生成。
 
 ## 核心创新：2 次批量审阅
 
@@ -87,12 +92,13 @@ cd GameDesign
 
 ```
 GameDesign/
-├── .claude/skills/              ←  核心交付：三个 Claude Code skill
-│   ├── gdd-architect/           ← 一句话 → GDD（含 EXAMPLE-GDD.md 示例产物）
+├── .claude/skills/              ← 核心交付：四个 Claude Code skill
+│   ├── gdd-architect/           ← 立项：一句话 → GDD（含 EXAMPLE-GDD.md）
+│   ├── feature-designer/        ← 功能详设：系统 → 可落地详设（含 EXAMPLE-SPEC.md）
 │   ├── numeric-audit/           ← 数值审计
 │   └── narrative-review/        ← 剧情审核
 ├── studio/                      ← 参考实现：可运行的全栈 Web 应用 + 知识库 + 23 测试
-│   ├── packages/shared/kb/      ← 方法论知识库（skill 按需读取）
+│   ├── packages/shared/kb/      ← 方法论知识库（11 节点 + 品类 + 两套 schema）
 │   └── apps/{server,web}/       ← Fastify + ws 后端 + React 前端
 ├── README.md
 └── LICENSE

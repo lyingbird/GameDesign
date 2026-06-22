@@ -38,6 +38,12 @@ match_strategy: 先精确匹配 id；再匹配 aliases（含中英文/俗称）�
 | `mmorpg` | 大型多人在线RPG | mmorpg, 网游, mmo, 多人在线rpg, 在线角色扮演 | 副本, 团本, 公会, 终局, 持久世界, WoW/魔兽世界, FF14/最终幻想14, RuneScape, Guild Wars 2, EVE Online, Lost Ark |
 | `party-game` | 派对游戏 | 派对游戏, 聚会游戏, party game, 合家欢, 社交游戏, 小游戏合集 | 多人同屏, 小游戏, 橡皮筋翻盘, 社交博弈, Mario Party/马里奥派对, Jackbox, Overcooked/胡闹厨房, Fall Guys, Among Us, Gang Beasts |
 | `puzzle` | 益智/解谜 | 益智, 解谜, 谜题, puzzle, 消除, 推理解谜, 逻辑 | 顿悟, aha, 核心机制变奏, 关卡教学, Tetris/俄罗斯方块, Portal/传送门, Baba Is You, The Witness, Candy Crush/糖果传奇, 推箱子 |
+| `gacha` | 抽卡养成 | 抽卡, gacha, 扭蛋, 抽卡手游, 二次元抽卡, 抽卡养成, 角色收集, 卡池 | 卡池, 保底/pity, UP池, 限定, SSR, 养成, F2P, 原神, 明日方舟, FGO, 崩坏星穹铁道 |
+| `rhythm` | 音乐/节奏 | 音游, 节奏游戏, rhythm, 音乐游戏, osu, 节奏, 下落式 | 判定窗口, 谱面, combo, 准确率, 曲库, osu!, Beat Saber, Cytus, Arcaea, 太鼓达人 |
+| `racing` | 竞速/赛车 | 赛车, 竞速, racing, 卡丁车, 飙车, 拟真赛车, 街机赛车 | 手感, 漂移, 氮气, 赛道, 物理, Mario Kart/马里奥卡丁车, Forza, Gran Turismo, Trackmania |
+| `fighting` | 格斗 | 格斗, 格斗游戏, fighting, 街霸, 对战格斗, 2D格斗, 3D格斗 | 帧数据, 连段, 取消, 判定框, netcode, Street Fighter/街霸, Tekken/铁拳, GG Strive, 大乱斗, Skullgirls |
+| `extraction-shooter` | 撤离射击 | 撤离射击, extraction, 撤离, 搜打撤, 塔科夫, escape from tarkov | 搜刮, 撤离点, 装备损失, PvPvE, 黑市, Escape from Tarkov/塔科夫, Hunt Showdown, 灰区战争, DMZ |
+| `visual-novel` | 视觉小说/文字冒险 | 视觉小说, 恋爱游戏, visual novel, galgame, avg, 文字冒险, 乙女游戏, 互动小说 | 分支叙事, 多结局, 好感度, 立绘, CG, 命运石之门, DDLC, 428, 底特律变人, 弹丸论破 |
 
 ## 单人/小团队友好度速查（供 AI 推荐时参考）
 AI 工具的用户多为单人/小团队策划，AI 应优先引导可控 scope。各品类对 solo 的友好度大致排序：

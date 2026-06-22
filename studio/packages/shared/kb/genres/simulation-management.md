@@ -1,7 +1,7 @@
 ---
 id: simulation-management
 kind: genre
-aliases: [模拟经营, 经营模拟, 管理模拟, simulation, management, tycoon, 大亨, 经营游戏, 模拟]
+aliases: [模拟经营, 经营模拟, 管理模拟, simulation, management, tycoon, 大亨, 经营游戏, 模拟, 种田, 农场, farming, 牧场, 种地, 星露谷, stardew, 牧场物语]
 tags: [simulation, management, tycoon, economy, optimization, systems]
 ---
 # 模拟经营 (Simulation / Management)

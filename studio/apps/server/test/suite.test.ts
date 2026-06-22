@@ -92,7 +92,7 @@ describe("shared/kb", () => {
   test("exact KB counts", () => {
     assert.equal(kb.nodes.length, 11, "11 node cards");
     assert.equal(kb.methodology.length, 11, "11 methodology cards");
-    assert.equal(kb.genres.length, 21, "21 genre cards (20 original + platformer)");
+    assert.equal(kb.genres.length, 27, "27 genre cards");
     assert.equal(kb.gddSchema.length, 2, "2 gdd-schema cards");
   });
   test("matchGenre resolves the new platformer card", () => {
@@ -101,6 +101,18 @@ describe("shared/kb", () => {
   });
   test("matchGenre still resolves existing genres", () => {
     assert.equal(matchGenre(kb, "我想做一个塔防游戏")?.id, "tower-defense");
+  });
+  test("matchGenre resolves the 6 new genre cards", () => {
+    assert.equal(matchGenre(kb, "二次元抽卡养成手游")?.id, "gacha");
+    assert.equal(matchGenre(kb, "我想做一个音游")?.id, "rhythm");
+    assert.equal(matchGenre(kb, "赛车竞速游戏")?.id, "racing");
+    assert.equal(matchGenre(kb, "像街霸的格斗游戏")?.id, "fighting");
+    assert.equal(matchGenre(kb, "撤离射击 搜打撤")?.id, "extraction-shooter");
+    assert.equal(matchGenre(kb, "恋爱视觉小说 galgame")?.id, "visual-novel");
+  });
+  test("regression: 种田/农场 now resolves to simulation-management", () => {
+    assert.equal(matchGenre(kb, "我想做一个种田游戏")?.id, "simulation-management");
+    assert.equal(matchGenre(kb, "农场经营")?.id, "simulation-management");
   });
   test("methodologyFor maps cards to nodes", () => {
     const ids = methodologyFor(kb, "core_loop").map((m) => m.id);

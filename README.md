@@ -6,7 +6,7 @@
 <p>
 <img alt="Built for Claude Code" src="https://img.shields.io/badge/Built%20for-Claude%20Code-6E56CF">
 <img alt="skills" src="https://img.shields.io/badge/skills-4-22C55E">
-<img alt="genres" src="https://img.shields.io/badge/品类卡-21-F59E0B">
+<img alt="genres" src="https://img.shields.io/badge/品类卡-27-F59E0B">
 <img alt="methodology" src="https://img.shields.io/badge/节点方法论-11-3B82F6">
 <img alt="tests" src="https://img.shields.io/badge/参考实现测试-23%20passing-22C55E">
 <img alt="license" src="https://img.shields.io/badge/license-MIT-blue">
@@ -41,7 +41,7 @@ GameDesignFlow 走第三条路：
 
 底层方法论知识库（`studio/packages/shared/kb/`，被 skill 按需读取增强）：
 - **11 节点设计方法论**（创意接入 → 核心幻想 → 支柱 → 品类 → 循环 → 系统 → 数值 → 装配 → 审核 → 锁版 → 验证）
-- **21 张品类卡**（塔防/肉鸽/ARPG/魂类/银河城/平台跳跃/卡牌…，含核心循环、子系统、参考作、坑、单人可行性）
+- **27 张品类卡**（塔防/肉鸽/ARPG/魂类/银河城/平台跳跃/卡牌/抽卡/音游/赛车/格斗/撤离射击/视觉小说…，含核心循环、子系统、参考作、坑、单人可行性）
 - **11 张方法论卡** + **两套输出 schema**：GDD（10 章立项案）/ Feature Spec（10 节功能详设）
 
 ## 快速开始
@@ -120,8 +120,9 @@ GDF_MOCK=1 pnpm dev  # 无需 API key 跑通完整 11 节点 → Web :5273
 
 - [ ] skill 自包含分发：把所需 KB 卡片内联进各 skill，脱离 `studio/` 也能跑。
 - [ ] `gdd-architect` 接 `numeric-audit`：GDD 第 8 章数值骨架自动送审。
-- [ ] 更多品类卡（撤离射击 / 格斗 / 节奏 / 竞速）。
-- [ ] 当前品类匹配靠别名/关键词；跨界融合（如「英雄 FPS」）需手动叠加多张卡。
+- [x] 品类卡扩充至 27 种（新增抽卡/音游/赛车/格斗/撤离射击/视觉小说），覆盖常见说法。
+- [ ] 品类匹配仅认 frontmatter 别名，README 关键词列（参考作品）未进匹配逻辑——可把标志参考作品并入别名进一步提升命中。
+- [ ] 当前跨界融合（如「英雄 FPS」）需手动叠加多张卡。
 
 ## License
 
